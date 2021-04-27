@@ -27,11 +27,19 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+		<plugin>
+            <groupId>org.openclover</groupId>
+            <artifactId>clover-maven-plugin</artifactId>
+            <version>4.4.1</version>     
+        </plugin>
+
+		
         <plugin>
 		  <artifactId>maven-antrun-plugin</artifactId>
 		  <version>1.7</version>

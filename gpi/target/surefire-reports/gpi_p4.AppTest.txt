@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: gpi_p4.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 s - in gpi_p4.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 s - in gpi_p4.AppTest
