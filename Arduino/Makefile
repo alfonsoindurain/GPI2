@@ -5,11 +5,11 @@
 
 ### PROJECT_DIR
 ### This is the path to where you have created/cloned your project
-PROJECT_DIR       = /var/lib/tomcat8/.jenkins/workspace/Jenkinsfile_main/MyArduinoProject
+PROJECT_DIR       = /var/lib/tomcat8/.jenkins/workspace/Practica5Final/MyArduinoProject
 
 ### ARDMK_DIR
 ### Path to the Arduino-Makefile directory.
-ARDMK_DIR         = /var/lib/tomcat8/.jenkins/workspace/Jenkinsfile_main/MyArduinoProject/Arduino-Makefile
+ARDMK_DIR         = /var/lib/tomcat8/.jenkins/workspace/Practica5Final/MyArduinoProject/Arduino-Makefile
 
 ### ARDUINO_DIR
 ### Path to the Arduino application and resources directory.
