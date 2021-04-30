@@ -1,0 +1,40 @@
+pipeline{
+    agent any
+    stages {
+        stage('git'){
+            steps{
+                git branch: 'main', credentialsId: '5be7a70e-a175-4aad-82e3-41f37cccbe95', url: 'https://github.com/alfonsoindurain/GPI2.git'
+            }
+        }
+        stage('Maven'){
+            steps{
+                    sh 'mvn test -f Maven_Simple_App/gpi/pom.xml'
+                    sh 'mvn test -f Maven_Simple_Web_App/gpi-web/pom.xml'
+                    sh 'mvn compile site -f Maven_Simple_App/gpi/pom.xml'
+            }
+        }
+        stage('Android'){
+            steps{
+                dir('ActivityA116020/'){
+                    sh './gradlew assembleDebug'   
+                }
+            }
+        }
+        stage('Arduino'){
+            steps{
+                //sh 'mkdir MyArduinoProject'
+                dir('MyArduinoProject'){
+                    git branch: 'master', url: 'https://github.com/ladislas/Bare-Arduino-Project'
+                }
+                //
+                dir('Arduino/'){
+                    sh 'mv Makefile ../MyArduinoProject/src/FooProject'
+                }
+                sh 'cp -a Arduino/Arduino-Makefile/. MyArduinoProject/Arduino-Makefile/'
+                dir('MyArduinoProject/src/FooProject'){
+                    sh 'make'
+                }
+            }
+        }
+    }
+}
